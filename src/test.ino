@@ -3,11 +3,14 @@
  * ## File Information ##
  * ######################
  * 
- * testBraccioAllMotors.ino 
- * testBraccio90 is a setup sketch to check the movements of all the servo motors
- * Created on 18 Nov 2015
+ * testBraccioAllMotors.ino
+ *
+ * testBraccioAllMotors is a setup sketch to check the movements of all the servo motors
+ *
+ * Created on 27/12/2020 
  * by Electrokido
- * This example is not in the public domain.
+ *
+ * This sketch is in the public domain.
  * 
  */
 
