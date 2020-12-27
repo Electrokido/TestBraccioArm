@@ -3,14 +3,13 @@
  * ## File Information ##
  * ######################
  * 
- * testBraccioAllMotors.ino
- *
+ * testBraccioAllMotors.ino 
  * testBraccioAllMotors is a setup sketch to check the movements of all the servo motors
- *
- * Created on 27/12/2020 
+ * 
+ * Created on 27 Dec 2020
  * by Electrokido
- *
- * This sketch is in the public domain.
+ * 
+ * This example is in the public domain.
  * 
  */
 
@@ -28,14 +27,25 @@ Servo gripper;
 int motorToMove;
 
 void setup() {  
+
+  // Setup the Braccio and the Serial
+  
   Braccio.begin();
   Serial.begin(9600);
+
+  // Move it to its 90 degree position
+  
   Braccio.ServoMovement(20,         90, 90, 90, 90, 90,  73);
 }
 
 void loop() {
 
+  // If there is any new commands in the Serial Monitor
+
   if (Serial.available() > 0) {
+
+     // Read it in, and go through the motors, checking which one it is. Then, move that motor. Finaly, return it back to the default position.
+    
      motorToMove = Serial.read();
      if (motorToMove == 1) {
       Serial.println("Moving motor 1");
@@ -102,6 +112,5 @@ void loop() {
  * M4=wrist vertical degrees. Allowed values from 0 to 180 degrees
  * M5=wrist rotation degrees. Allowed values from 0 to 180 degrees
  * M6=gripper degrees. Allowed values from 10 to 73 degrees. 10: the toungue is open, 73: the gripper is closed.
- * 
  * 
 */
